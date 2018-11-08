@@ -4,8 +4,8 @@
 #include "headers/vetor.h"
 
 class Vertice{
-public:
     double *val;
+    
 public:
     Vertice(double, double, double);
     ~Vertice();

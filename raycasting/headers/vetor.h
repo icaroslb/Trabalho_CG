@@ -4,8 +4,8 @@
 #include <cmath>
 
 class Vetor{
-private:
     double *val;
+    
 public:
     Vetor(double, double, double);
     ~Vetor();
