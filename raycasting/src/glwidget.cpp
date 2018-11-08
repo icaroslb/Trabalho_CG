@@ -53,14 +53,15 @@ void GLWidget::paintGL()
     glTranslated(0, 0, -2.5);
     glBegin(GL_POINTS);
 
-    for (int l = 0; l < tamH; l++)
-    {
+    for (int l = 0; l < tamH; l++){
         y = 50./2 - Dy/2 - l*Dy;
-        for (int c = 0; c < tamW; c++)
-        {
+        for (int c = 0; c < tamW; c++){
             x = -50./2 + Dx/2 + c*Dx;
-            glColor3f(1.0, 1.0, 0.0);
-            glVertex2f(x, y);
+            if(x>y){
+                glColor3f(1.0, 1.0, 0.0);
+                glVertex2f(x, y);
+            }
+
         }
     }
     glEnd();
