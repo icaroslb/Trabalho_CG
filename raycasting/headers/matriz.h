@@ -5,10 +5,10 @@
 #include <cmath>
 
 class Matriz{
-public:
     double **val;
     Matriz *prox;
 
+public:
     Matriz();
     ~Matriz();
 
