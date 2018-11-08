@@ -1,4 +1,4 @@
-#include "headers/vetor.h"
+#include "../headers/vetor.h"
 
 Vetor::Vetor(double x, double y, double z){
     val = new double[4];
@@ -13,11 +13,15 @@ Vetor::~Vetor(){
     delete val;
 }
 
+double Vetor::operator[](int i){
+	return val[i];
+}
+
 double Vetor::operator *(Vetor vet){
     double resultado = 0;
 
     for(int i = 0; i < 3; i++){
-        resultado += val[i]*vet.val[i];
+        resultado += val[i]*vet[i];
     }
 
     return resultado;
@@ -30,16 +34,15 @@ Vetor Vetor::operator*(double escalar){
 }
 
 Vetor Vetor::operator ->* (Vetor vet){
-    Vetor resultado(((val[1]*vet.val[2])-(val[2]*vet.val[1])),
-                   -((val[0]*vet.val[2])-(val[2]*vet.val[0])),
-                   (val[0]*vet.val[1])-(val[1]*vet.val[0]));
+    Vetor resultado(((val[1]*vet[2])-(val[2]*vet[1])),
+                   -((val[0]*vet[2])-(val[2]*vet[0])),
+                   (val[0]*vet[1])-(val[1]*vet[0]));
 
     return resultado;
 }
 
 Vetor Vetor::operator-(Vetor vet){
-    Vetor novoVetor(val[0]-vet.val[0], val[1]-vet.val[1], val[2]-vet.val[2]);
-
+    Vetor novoVetor(val[0]-vet[0], val[1]-vet[1], val[2]-vet[2]);
     return novoVetor;
 }
 

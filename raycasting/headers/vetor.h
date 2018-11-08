@@ -10,7 +10,8 @@ public:
     double *val;
     Vetor(double, double, double);
     ~Vetor();
-
+	
+	double operator[](int);
     double operator*(Vetor);
     Vetor operator*(double);
     Vetor operator->*(Vetor);
