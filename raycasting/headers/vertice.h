@@ -9,7 +9,8 @@ public:
 public:
     Vertice(double, double, double);
     ~Vertice();
-
+	
+	double operator[](int);
     Vetor operator-(Vertice);
     Vetor operator+(Vetor);
     double operator*(Vetor);
