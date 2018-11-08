@@ -30,7 +30,11 @@ SOURCES += \
 
 HEADERS += \
         headers/mainwindow.h \
-    headers/glwidget.h
+    headers/glwidget.h \
+    headers/objeto.h \
+    headers/forma.h \
+    headers/vertice.h \
+    headers/vetor.h
 
 FORMS += \
         mainwindow.ui
