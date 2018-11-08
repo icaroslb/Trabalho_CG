@@ -2,6 +2,10 @@
 #define GLWIDGET_H
 
 #include <QGLWidget>
+#include "headers/vetor.h"
+#include "headers/forma.h"
+#include "headers/face.h"
+#include "headers/vertice.h"
 
 class GLWidget : public QGLWidget
 {

@@ -5,8 +5,9 @@
 
 class Vetor{
 private:
-    double *val;
+
 public:
+    double *val;
     Vetor(double, double, double);
     ~Vetor();
 

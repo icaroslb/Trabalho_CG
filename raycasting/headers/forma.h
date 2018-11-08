@@ -7,11 +7,12 @@
 
 class Forma{
 private:
+
+public:
     std::vector<Vertice*> vert;
     int tamanho;
     double corAmb[3], corDif[3], corEsp[3];
-public:
-    virtual bool intercessao(Vetor raio, Vertice origem, double& t) = 0;
+    //virtual bool intercessao(Vetor raio, Vertice origem, double& t);
 };
 
 #endif // FORMA_H

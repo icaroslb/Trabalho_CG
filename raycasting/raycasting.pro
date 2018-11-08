@@ -26,7 +26,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         src/main.cpp \
         src/mainwindow.cpp \
-    src/glwidget.cpp
+    src/glwidget.cpp \
+    src/objeto.cpp \
+    src/vetor.cpp \
+    src/vertice.cpp \
+    src/face.cpp
 
 HEADERS += \
         headers/mainwindow.h \
@@ -34,7 +38,8 @@ HEADERS += \
     headers/objeto.h \
     headers/forma.h \
     headers/vertice.h \
-    headers/vetor.h
+    headers/vetor.h \
+    headers/face.h
 
 FORMS += \
         mainwindow.ui
