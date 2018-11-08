@@ -3,9 +3,9 @@
 
 #include "forma.h"
 
-class Face: virtual public Forma{
+class Face: public Forma{
 public:
-    Face(Vertice, Vertice, Vertice);
+    Face(Vertice*, Vertice*, Vertice*);
 
     Vetor normalUni();
     bool intercessao(Vetor, Vertice, double);

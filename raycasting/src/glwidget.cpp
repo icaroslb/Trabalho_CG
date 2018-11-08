@@ -57,16 +57,19 @@ void GLWidget::paintGL()
     Vertice v1(1,1,0);
     Vertice v2(10,10,0);
     Vertice v3(1,10,0);
-    Forma *plano = new Face(v1, v2, v3);
+    Forma *plano = new Face(&v1, &v2, &v3);
 
 
     //testes
+    Vetor *raio;
     for (int l = 0; l < tamH; l++){
         y = 50./2 - Dy/2 - l*Dy;
         for (int c = 0; c < tamW; c++){
             x = -50./2 + Dx/2 + c*Dx;
-            if(x>y){
-                Vetor raio(x,y,0);
+            std :: cout<< c<<std :: endl;
+            raio = new Vetor(x,y,0);
+            if(((Face*)plano)->intercessao(*raio, v1, 5)){
+
                 glColor3f(1.0, 1.0, 0.0);
                 glVertex2f(x, y);
             }

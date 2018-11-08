@@ -9,9 +9,9 @@ Vetor::Vetor(double x, double y, double z){
     val[3] = 0;
 }
 
-Vetor::~Vetor(){
+/*Vetor::~Vetor(){
     delete val;
-}
+}*/
 
 double Vetor::operator[](int i){
 	return val[i];

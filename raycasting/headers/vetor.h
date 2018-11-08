@@ -6,9 +6,8 @@
 class Vetor{
     double *val;
 public:
-    double *val;
     Vetor(double, double, double);
-    ~Vetor();
+    //~Vetor();
 	
 	double operator[](int);
     double operator*(Vetor);

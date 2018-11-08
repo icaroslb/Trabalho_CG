@@ -6,7 +6,6 @@
 class Vertice{
     double *val;
 public:
-    double *val;
     Vertice(double, double, double);
     ~Vertice();
 	
