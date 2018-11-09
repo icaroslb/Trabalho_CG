@@ -1,7 +1,7 @@
 #include "../headers/vertice.h"
 
 Vertice::Vertice(double x, double y, double z){
-    val = new double[4];
+    //val = new double[4];
 
     val[0] = x;
     val[1] = y;
@@ -9,9 +9,16 @@ Vertice::Vertice(double x, double y, double z){
     val[3] = 1;
 }
 
-Vertice::~Vertice(){
-    delete val;
+Vertice::Vertice(){
+    val[0] = 0;
+    val[1] = 0;
+    val[2] = 0;
+    val[3] = 1;
 }
+
+//Vertice::~Vertice(){
+//    delete val;
+//}
 
 
 double Vertice::operator[](int i){
@@ -50,6 +57,9 @@ double Vertice::operator*(Vertice vert){
 }
 
 void Vertice::operator =(double *novVal){
-    delete val;
-    val = novVal;
+    //delete val;
+    val[0] = novVal[0];
+    val[1] = novVal[1];
+    val[2] = novVal[2];
+    val[3] = novVal[3];
 }

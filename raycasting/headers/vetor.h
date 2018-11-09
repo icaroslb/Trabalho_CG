@@ -4,9 +4,10 @@
 #include <cmath>
 
 class Vetor{
-    double *val;
+    double val[4];
 public:
     Vetor(double, double, double);
+    Vetor();
     //~Vetor();
 	
 	double operator[](int);

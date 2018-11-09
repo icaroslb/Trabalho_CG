@@ -6,13 +6,8 @@
 #include "vertice.h"
 
 class Forma{
-private:
-
 public:
-    std::vector<Vertice*> vert;
-    int tamanho;
-    double corAmb[3], corDif[3], corEsp[3];
-    //virtual bool intercessao(Vetor raio, Vertice origem, double t);
+    virtual bool intercessao(Vetor, Vertice , double) = 0;
 };
 
 #endif // FORMA_H

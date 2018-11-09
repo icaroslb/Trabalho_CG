@@ -4,10 +4,11 @@
 #include "headers/vetor.h"
 
 class Vertice{
-    double *val;
+    double val[4];
 public:
     Vertice(double, double, double);
-    ~Vertice();
+    Vertice();
+    //~Vertice();
 	
 	double operator[](int);
     Vetor operator-(Vertice);

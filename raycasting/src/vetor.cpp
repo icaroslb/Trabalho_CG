@@ -1,11 +1,20 @@
 #include "../headers/vetor.h"
 
 Vetor::Vetor(double x, double y, double z){
-    val = new double[4];
+    //val = new double[4];
 
     val[0] = x;
     val[1] = y;
     val[2] = z;
+    val[3] = 0;
+}
+
+Vetor::Vetor(){
+    //val = new double[4];
+
+    val[0] = 0;
+    val[1] = 0;
+    val[2] = 0;
     val[3] = 0;
 }
 

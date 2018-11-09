@@ -24,7 +24,7 @@ void GLWidget::resizeGL(int w, int h)
 {
     glClearColor(0.0,0.0,0.0,0.0);
     glClear(GL_COLOR_BUFFER_BIT);
-
+/*
     if (h == 0) h = 1;
     if (w == 0) w = 1;
     tamH = h;
@@ -35,6 +35,26 @@ void GLWidget::resizeGL(int w, int h)
     glLoadIdentity();
     glOrtho(-50./2, 50./2, -50./2, 50./2, 1.0, 10.0);
     glMatrixMode(GL_MODELVIEW);
+    */
+    tamH = h;
+    tamW = w;
+    int wsize = w, hsize = h;
+        if (h >= w)
+        {
+            hsize = w*H/W;
+            glViewport(0, (h-hsize)/2, wsize, hsize);
+        }
+        else if (h < w)
+        {
+            wsize = h*W/H;
+            glViewport((w-wsize)/2, 0,  wsize, hsize);
+        }
+
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glOrtho(-W/2, W/2, -H/2, H/2, 1.0, 10.0);
+        glMatrixMode(GL_MODELVIEW);
+
 }
 
 /*---------------------------------------------------------------------------*
@@ -44,8 +64,8 @@ void GLWidget::resizeGL(int w, int h)
 void GLWidget::paintGL()
 {
     double x, y, Dx, Dy;
-    Dx = 50/tamW;
-    Dy = 50/tamH;
+    Dx = W/tamW;
+    Dy = H/tamH;
 
     glClear (GL_COLOR_BUFFER_BIT);
 
@@ -53,27 +73,14 @@ void GLWidget::paintGL()
     glTranslated(0, 0, -2.5);
     glBegin(GL_POINTS);
 
-    //testes
-    Vertice v1(1,1,0);
-    Vertice v2(10,10,0);
-    Vertice v3(1,10,0);
-    Forma *plano = new Face(&v1, &v2, &v3);
+    parser("teste.obj", objetos);
 
-
-    //testes
-    Vetor *raio;
     for (int l = 0; l < tamH; l++){
-        y = 50./2 - Dy/2 - l*Dy;
+        y = H/2 - Dy/2 - l*Dy;
         for (int c = 0; c < tamW; c++){
-            x = -50./2 + Dx/2 + c*Dx;
-            std :: cout<< c<<std :: endl;
-            raio = new Vetor(x,y,0);
-            if(((Face*)plano)->intercessao(*raio, v1, 5)){
-
-                glColor3f(1.0, 1.0, 0.0);
-                glVertex2f(x, y);
-            }
-
+            x = -W/2 + Dx/2 + c*Dx;
+            glColor3f(1.0, 1.0, 0.0);
+            glVertex2f(x, y);
         }
     }
     glEnd();

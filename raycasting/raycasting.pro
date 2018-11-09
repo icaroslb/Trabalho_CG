@@ -30,7 +30,9 @@ SOURCES += \
     src/objeto.cpp \
     src/vetor.cpp \
     src/vertice.cpp \
-    src/face.cpp
+    src/face.cpp \
+    src/esfera.cpp \
+    src/parser.cpp
 
 HEADERS += \
         headers/mainwindow.h \
@@ -39,7 +41,9 @@ HEADERS += \
     headers/forma.h \
     headers/vertice.h \
     headers/vetor.h \
-    headers/face.h
+    headers/face.h \
+    headers/esfera.h \
+    headers/parser.h
 
 FORMS += \
         mainwindow.ui

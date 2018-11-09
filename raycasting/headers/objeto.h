@@ -9,11 +9,14 @@ class Objeto {
 private:
     std :: string nome;
     std :: vector<Forma*> formas;
+    std :: vector<Vertice> vertices;
 public:
     Objeto(std :: string nome);
     std :: string getNome();
     void addForma(Forma *forma);
     std :: vector<Forma*>* getFormas();
+    std :: vector<Vertice>* getVertices();
+    void addVertice(Vertice vertice);
 
 };
 

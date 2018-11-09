@@ -1,13 +1,15 @@
 #include "headers/face.h"
 
-Face::Face(Vertice *vert1, Vertice *vert2, Vertice *vert3){
-    tamanho = 3;
-    vert.push_back(vert1);
-    vert.push_back(vert2);
-    vert.push_back(vert3);
-}
 
-Vetor Face::normalUni(){
+Face::Face(Vertice vert1, Vertice vert2, Vertice vert3){
+    v1 = vert1;
+    v2 = vert2;
+    v3 = vert3;
+}
+bool Face::intercessao(Vetor raio, Vertice ori, double inter){}
+
+
+/*Vetor Face::normalUni(){
 
     Vetor vet1((*vert[0])[1] - (*vert[1])[0], (*vert[0])[1] - (*vert[1])[1], (*vert[0])[2] - (*vert[1])[2]),
           vet2((*vert[0])[0] - (*vert[2])[0], (*vert[0])[1] - (*vert[2])[1], (*vert[0])[2] - (*vert[2])[2]),
@@ -37,3 +39,4 @@ bool Face::intercessao(Vetor raio, Vertice ori, double inter){
         }
         return false;
 }
+*/
