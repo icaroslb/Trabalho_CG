@@ -1,10 +1,10 @@
 #include "../headers/esfera.h"
 
-Esfera::Esfera(Vertice* centro, double raio){
+Esfera::Esfera(Vertice centro, double raio){
     this->raio = raio;
     this->centro = centro;
 }
-bool Esfera::intercessao(Vetor raio, Vertice ori, double& inter){}
+bool Esfera::intercessao(Vetor raio, Vetor ori, double& inter){}
 
 
 /*bool Esfera::intercessao(Vetor raio, Vertice ori, double inter){

@@ -5,11 +5,11 @@
 
 class Esfera: public Forma{
     double raio;
-    Vertice* centro;
+    Vertice centro;
 
 public:
-    Esfera(Vertice*, double);
-    bool intercessao(Vetor, Vertice, double&);
+    Esfera(Vertice, double);
+    bool intercessao(Vetor, Vetor, double&);
 };
 
 #endif // ESFERA_H

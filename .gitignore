@@ -34,4 +34,7 @@ build-raycasting-Desktop-Debug/
 raycasting/raycasting.pro.user
 
 *.o
+*.h.gch
+*.out
+teste_face.cpp
 # End of https://www.gitignore.io/api/qtcreator
