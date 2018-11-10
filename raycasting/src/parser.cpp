@@ -33,8 +33,8 @@ bool parser (const char * path, std::vector < Objeto> &objetos){
             Vertice ve2 = temp_vertices[v2 - 1];
             Vertice ve3 = temp_vertices[v3 - 1];
 
-            Forma *f = new Face(ve1,ve2,ve3);
-            objetos[size-1].addForma(f);
+            //Forma *f = new Face(ve1,ve2,ve3);
+            //objetos[size-1].addForma(f);
             if(matches != 6){
                 return false;
             }
