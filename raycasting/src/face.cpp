@@ -1,12 +1,47 @@
-#include "headers/face.h"
+#include "../headers/face.h"
 
 
 Face::Face(Vertice vert1, Vertice vert2, Vertice vert3){
-    v1 = vert1;
-    v2 = vert2;
-    v3 = vert3;
+    addFace(vert1, vert2, vert3);
 }
-bool Face::intercessao(Vetor raio, Vertice ori, double inter){}
+
+Face::Face(){
+
+}
+
+void Face::addFace(Vertice vert1, Vertice vert2, Vertice vert3){
+    Face_Pts pts;
+    int flagV1 = 0;
+    int flagV2 = 0;
+    int flagV3 = 0;
+    for(Vertice v: vertices){
+        if(vert1 == v){
+            pts.v1 = &v;
+            flagV1 = 1;
+        }
+        if(vert2 == v){
+            pts.v2 = &v;
+            flagV2 = 1;
+        }
+        if(vert3 == v){
+            pts.v3 = &v;
+            flagV3 = 1;
+        }
+    }
+    if(flagV1 == 0){
+        vertices.push_back(vert1);
+        pts.v1 = &vert1;
+    }
+    if(flagV2 == 0){
+        vertices.push_back(vert2);
+        pts.v2 = &vert2;
+    }
+    if(flagV3 == 0){
+        vertices.push_back(vert3);
+        pts.v3 = &vert3;
+    }
+}
+bool Face::intercessao(Vetor raio, Vertice ori, double& inter){}
 
 
 /*Vetor Face::normalUni(){

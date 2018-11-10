@@ -9,7 +9,7 @@ class Esfera: public Forma{
 
 public:
     Esfera(Vertice*, double);
-    bool intercessao(Vetor, Vertice, double);
+    bool intercessao(Vetor, Vertice, double&);
 };
 
 #endif // ESFERA_H

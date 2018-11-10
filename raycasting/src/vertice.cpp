@@ -56,10 +56,18 @@ double Vertice::operator*(Vertice vert){
     return resultado;
 }
 
+
+
 void Vertice::operator =(double *novVal){
-    //delete val;
     val[0] = novVal[0];
     val[1] = novVal[1];
     val[2] = novVal[2];
     val[3] = novVal[3];
+}
+
+bool Vertice::operator ==(Vertice v2){
+    if(val[0] == v2[0] && val[1] == v2[1] && val[2] == v2[2] && val[3] == v2[3])
+        return true;
+    else
+        return false;
 }

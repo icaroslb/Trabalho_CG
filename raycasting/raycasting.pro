@@ -32,7 +32,7 @@ SOURCES += \
     src/vertice.cpp \
     src/face.cpp \
     src/esfera.cpp \
-    src/parser.cpp
+    src/parser.cpp \
 
 HEADERS += \
         headers/mainwindow.h \

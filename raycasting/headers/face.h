@@ -3,13 +3,19 @@
 
 #include "forma.h"
 //#include "vertice.h"
+struct Face_Pts{
+    Vertice *v1, *v2, *v3;
+};
 
 class Face: public Forma{
-    Vertice v1, v2, v3;
+    std::vector<Face_Pts> triangulos;
+    std::vector<Vertice> vertices;
 public:
     Face(Vertice, Vertice, Vertice);
-    Vetor normalUni();
-    bool intercessao(Vetor, Vertice, double);
+    Face();
+
+    void addFace(Vertice, Vertice, Vertice);
+    bool intercessao(Vetor, Vertice, double &);
 };
 
 #endif // FACE_H

@@ -1,7 +1,7 @@
 #ifndef VERTICE_H
 #define VERTICE_H
 
-#include "headers/vetor.h"
+#include "vetor.h"
 
 class Vertice{
     double val[4];
@@ -15,7 +15,8 @@ public:
     Vetor operator+(Vetor);
     double operator*(Vetor);
     double operator*(Vertice);
-    void operator=(double*);
+    void operator =(double*);
+    bool operator==(Vertice);
 };
 
 #endif // VERTICE_H

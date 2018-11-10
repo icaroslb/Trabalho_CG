@@ -36,19 +36,3 @@ void Objeto :: addForma(Forma *forma){
 }
 
 
-/*
-Metodo getVertices
-@retono:
-    o vector de vertices.
-*/
-std :: vector<Vertice>* Objeto :: getVertices(){
-    return &vertices;
-}
-
-/*
-Adiciona um vertice ao vetor de formas
-@Parêmetros: Objeto do tipo Vertex
-*/
-void Objeto :: addVertice(Vertice vertice){
-    vertices.push_back(vertice);
-}

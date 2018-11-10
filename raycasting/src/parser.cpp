@@ -1,4 +1,4 @@
-#include "headers/parser.h"
+#include "../headers/parser.h"
 
 bool parser (const char * path, std::vector < Objeto> &objetos){
 
@@ -25,14 +25,13 @@ bool parser (const char * path, std::vector < Objeto> &objetos){
             float x, y, z;
             fscanf(file, "%f %f %f\n", &x, &y, &z );
             Vertice v(x,y,z);
-            objetos[size-1].addVertice(v);
-
+            temp_vertices.push_back(v);
         }else if(strcmp(linha_lida, "f") == 0){
             int v1, v2, v3, aux;
             int matches = fscanf(file, "%d//%d %d//%d %d//%d\n", &v1, &aux, &v2, &aux, &v3, &aux);
-            Vertice ve1 = (*objetos[size-1].getVertices())[v1 - 1];
-            Vertice ve2 = (*objetos[size-1].getVertices())[v2 - 1];
-            Vertice ve3 = (*objetos[size-1].getVertices())[v3 - 1];
+            Vertice ve1 = temp_vertices[v1 - 1];
+            Vertice ve2 = temp_vertices[v2 - 1];
+            Vertice ve3 = temp_vertices[v3 - 1];
 
             Forma *f = new Face(ve1,ve2,ve3);
             objetos[size-1].addForma(f);

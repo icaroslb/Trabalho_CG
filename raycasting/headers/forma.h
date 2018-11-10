@@ -7,7 +7,7 @@
 
 class Forma{
 public:
-    virtual bool intercessao(Vetor, Vertice , double) = 0;
+    virtual bool intercessao(Vetor, Vertice , double&) = 0;
 };
 
 #endif // FORMA_H

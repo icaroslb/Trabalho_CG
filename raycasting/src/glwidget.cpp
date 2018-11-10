@@ -73,6 +73,11 @@ void GLWidget::paintGL()
     glTranslated(0, 0, -2.5);
     glBegin(GL_POINTS);
 
+    Vertice v1(0,0,0);
+    Vertice v2(1,1,1);
+    Vertice v3(2,2,2);
+    Forma *f = new Face(v1,v2,v3);
+    //Face f;
     parser("teste.obj", objetos);
 
     for (int l = 0; l < tamH; l++){
