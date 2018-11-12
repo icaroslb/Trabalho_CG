@@ -74,7 +74,7 @@ void GLWidget::paintGL()
     glBegin(GL_POINTS);
 
 
-    parser("teste.obj", objetos);
+    parser("test.obj", objetos);
 
     for (int l = 0; l < tamH; l++){
         y = H/2 - Dy/2 - l*Dy;
