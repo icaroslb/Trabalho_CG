@@ -34,7 +34,7 @@ bool parser (const char * path, std::vector < Objeto> &objetos){
             if(matches != 6){
                 return false;
             }
-            ((Face*)(*objetos[size -1].getFormas())[0])->addFace(v1,v2,v3);
+            ((Face*)(*objetos[size -1].getFormas())[0])->addFace(v1-1,v2-1,v3-1);
         }
     }
     return true;

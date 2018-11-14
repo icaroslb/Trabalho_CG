@@ -2,12 +2,12 @@
 #define GLWIDGET_H
 
 #include <QGLWidget>
-#include "headers/vetor.h"
-#include "headers/forma.h"
-#include "headers/face.h"
-#include "headers/vertice.h"
-#include "headers/esfera.h"
-#include "headers/objeto.h"
+#include "../headers/vetor.h"
+#include "../headers/forma.h"
+#include "../headers/face.h"
+#include "../headers/vertice.h"
+#include "../headers/esfera.h"
+#include "../headers/objeto.h"
 #include "parser.h"
 
 class GLWidget : public QGLWidget
@@ -17,15 +17,13 @@ class GLWidget : public QGLWidget
   float tamH;
   float W = 50.;
   float H = 50.;
-  std :: vector<Objeto> objetos;
+
 
 public:
   explicit GLWidget(QWidget *parent = 0);
-
   void initializeGL();
   void paintGL();
   void resizeGL(int w, int h);
-
 private:
 
 public slots:

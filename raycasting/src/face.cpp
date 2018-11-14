@@ -24,7 +24,7 @@ void Face::addFace(int v1, int v2, int v3){
     pts.v1 = v1 ;
     pts.v2 = v2 ;
     pts.v3 = v3 ;
-
+    triangulos.push_back(pts);
 }
 bool Face::intercessao(Vetor raio, Vetor ori, double& inter){}
 

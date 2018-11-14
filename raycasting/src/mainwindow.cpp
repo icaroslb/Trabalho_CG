@@ -26,9 +26,9 @@ MainWindow::MainWindow(QWidget *parent) :
       connect(quit,&QAction::triggered,this,&QApplication::quit);
 
       GLWidget *glw = new GLWidget(this);
-
       setCentralWidget(glw);
 
+    objetos;
       statusBar()->showMessage("Pronto");
 
    // ui->setupUi(this);
@@ -42,10 +42,13 @@ MainWindow::~MainWindow()
 void MainWindow::openObjFile()
 {
   QFileInfo fileInfo;
+
   QString filename = QFileDialog::getOpenFileName(this,"Abrir arquivo OBJ",fileInfo.absolutePath(),"Arquivo OBJ (*.obj)");
 
-  if (!filename.isEmpty())
+  if (!filename.isEmpty()){
+    //parser(filename.toStdString(), objetos);
     statusBar()->showMessage("Carregando "+filename+" ...");
+  }
 }
 
 void MainWindow::saveObjFile()
