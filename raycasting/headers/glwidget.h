@@ -9,6 +9,7 @@
 #include "../headers/esfera.h"
 #include "../headers/objeto.h"
 #include "parser.h"
+#include "../headers/objeto.h"
 
 class GLWidget : public QGLWidget
 {
@@ -19,7 +20,9 @@ class GLWidget : public QGLWidget
   float H = 50.;
 
 
+
 public:
+  std :: vector<Objeto> objetos;
   explicit GLWidget(QWidget *parent = 0);
   void initializeGL();
   void paintGL();
