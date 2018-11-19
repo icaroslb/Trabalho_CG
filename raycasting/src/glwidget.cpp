@@ -4,6 +4,7 @@
 GLWidget::GLWidget(QWidget *parent) :
     QGLWidget(parent)
 {
+    objetos.size();
 }
 
 /*---------------------------------------------------------------------------*
@@ -68,7 +69,9 @@ void GLWidget::paintGL()
     Dy = H/tamH;
 
     glClear (GL_COLOR_BUFFER_BIT);
-
+    if(objetos.size() > 0){
+        std:: cout <<objetos[0].getNome() << std :: endl;
+    }
     glLoadIdentity();
     glTranslated(0, 0, -2.5);
     glBegin(GL_POINTS);

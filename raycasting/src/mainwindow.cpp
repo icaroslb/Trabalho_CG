@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QAction *save = new QAction("&Salvar",this);
     QAction *quit = new QAction("&Fechar",this);
 
-    QVariant v = qVariantFromValue(glw);
+    QVariant v = qVariantFromValue((void*)glw);
     open->setData(v);
 
     open->setShortcut(tr("CTRL+O"));
@@ -48,7 +48,7 @@ void MainWindow::openObjFile()
 
     QAction *act = qobject_cast<QAction *>(sender());
     QVariant v = act->data();
-    GLWidget *glw = (GLWidget *) v.value<void *>();
+    GLWidget* glw = (GLWidget* ) v.value<void *>();
 
     QString filename = QFileDialog::getOpenFileName(this,"Abrir arquivo OBJ",fileInfo.absolutePath(),"Arquivo OBJ (*.obj)");
     if (!filename.isEmpty()){
