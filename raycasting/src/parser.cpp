@@ -35,6 +35,17 @@ bool parser (const char * path, std::vector < Objeto> &objetos){
                 return false;
             }
             ((Face*)(*objetos[size -1].getFormas())[0])->addFace(v1-1,v2-1,v3-1);
+        }else if(strcmp(linha_lida, "o.E") == 0){
+            fscanf(file, "%s", nome_do_objeto);
+            Objeto obj(nome_do_objeto);
+            float x, y, z, raio;
+            while (fscanf(file, "%s %f %f %f %f", nome_do_objeto, &x, &y, &z, &raio) == 5) {
+                Vertice v(x,y,z);
+                Forma *f = new Esfera(v, raio);
+                obj.addForma(f);
+                }
+            objetos.push_back(obj);
+            size ++;
         }
     }
     return true;

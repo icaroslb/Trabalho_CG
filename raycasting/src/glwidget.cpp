@@ -78,10 +78,14 @@ void GLWidget::paintGL()
     glBegin(GL_POINTS);
     for (int l = 0; l < tamH; l++){
         y = H/2 - Dy/2 - l*Dy;
+        //std:: cout <<"y:" << y << std :: endl;
         for (int c = 0; c < tamW; c++){
             x = -W/2 + Dx/2 + c*Dx;
-            glColor3f(1.0, 1.0, 0.0);
-            glVertex2f(x, y);
+
+            if(true){
+                 glColor3f((rand()%255)/255., (rand()%255)/255., (rand()%255)/255.);
+                glVertex3f(x, y, -1.);
+            }
         }
     }
     glEnd();
