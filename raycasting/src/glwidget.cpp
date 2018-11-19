@@ -71,6 +71,7 @@ void GLWidget::paintGL()
     glClear (GL_COLOR_BUFFER_BIT);
     if(objetos.size() > 0){
         std:: cout <<objetos[0].getNome() << std :: endl;
+        std:: cout <<objetos.size() << std :: endl;
     }
     glLoadIdentity();
     glTranslated(0, 0, -2.5);
