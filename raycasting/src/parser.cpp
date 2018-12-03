@@ -39,13 +39,11 @@ bool parser (const char * path, std::vector < Objeto> &objetos){
             fscanf(file, "%s", nome_do_objeto);
             Objeto obj(nome_do_objeto);
             float x, y, z, raio;
-            while (fscanf(file, "%s %f %f %f %f", nome_do_objeto, &x, &y, &z, &raio) == 5) {
+            while (int matches = fscanf(file, "%s %f %f %f %f", nome_do_objeto, &x, &y, &z, &raio) == 5) {
                 Vertice v(x,y,z);
                 Forma *f = new Esfera(v, raio);
                 obj.addForma(f);
-                if(matches != 6){
-                    break;
-                }
+
             }
             objetos.push_back(obj);
             size ++;
