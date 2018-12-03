@@ -43,7 +43,10 @@ bool parser (const char * path, std::vector < Objeto> &objetos){
                 Vertice v(x,y,z);
                 Forma *f = new Esfera(v, raio);
                 obj.addForma(f);
+                if(matches != 6){
+                    break;
                 }
+            }
             objetos.push_back(obj);
             size ++;
         }
