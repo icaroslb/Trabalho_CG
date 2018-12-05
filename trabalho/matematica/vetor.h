@@ -1,6 +1,8 @@
 #ifndef VETOR_H
 #define VETOR_H
 
+#include <math.h>
+
 #define X 0
 #define Y 1
 #define Z 2
@@ -8,18 +10,20 @@
 
 class Vetor
 {
+private:
     double val[4];
 
 public:
     Vetor();
     Vetor(double x, double y, double z);
-    //~Vetor();
+    ~Vetor();
 
-    double operator[](int);
-    double* operator*(Vetor);
-    Vetor* operator*(double escalar);
-    Vetor* operator->*(Vetor);
-    Vetor* operator-(Vetor);
+    double operator [] (int pos);
+    double operator * (Vetor produtoEsc);
+    Vetor* operator * (double escalar);
+    Vetor* operator / (double escalar);
+    Vetor* operator ->* (Vetor produtoVet);
+    Vetor* operator - (Vetor sub);
     Vetor* unitario();
 };
 

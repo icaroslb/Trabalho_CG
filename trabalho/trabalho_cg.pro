@@ -29,14 +29,16 @@ SOURCES += \
         view/mainwindow.cpp \
     controler/raycast.cpp \
     matematica/vetor.cpp \
-    view/pintar.cpp
+    matematica/vertice.cpp \
+    view/glwidget.cpp
 
 HEADERS += \
         view/mainwindow.h \
     controler/raycast.h \
     objetos/objetos.h \
     matematica/vetor.h \
-    view/pintar.h
+    matematica/vertice.h \
+    view/glwidget.h
 
 FORMS += \
         mainwindow.ui

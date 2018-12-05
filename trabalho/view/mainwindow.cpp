@@ -7,11 +7,12 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QPixmap imgEscalonar("../imgs/escalonar.png"),
-            imgRotacionar("../imgs/rotacionar.png"),
-            imgMover("../imgs/mover.png"),
-            imgCisalhar("../imgs/cisalhar.png"),
-            imgEspelhar("../imgs/espelhar.png");
+    QPixmap imgEscalonar("../trabalho/imgs/escalonar.png"),
+            imgRotacionar("../trabalho/imgs/rotacionar.png"),
+            imgMover("../trabalho/imgs/mover.png"),
+            imgCisalhar("../trabalho/imgs/cisalhar.png"),
+            imgEspelhar("../trabalho/imgs/espelhar.png");
+
     QIcon iconEscalonar(imgEscalonar),
           iconRotacionar(imgRotacionar),
           iconMover(imgMover),
