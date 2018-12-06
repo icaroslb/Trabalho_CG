@@ -28,6 +28,13 @@ void Face::addFace(int v1, int v2, int v3){
 }
 bool Face::intercessao(Vetor raio, Vetor ori, double& inter){}
 
+int Face :: sizeTriangulos(){
+    return triangulos.size();
+}
+
+int Face :: sizeVertices(){
+    return vertices.size();
+}
 
 /*Vetor Face::normalUni(){
 

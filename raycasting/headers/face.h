@@ -18,6 +18,8 @@ public:
     void addVertice(Vertice);
     void addFace(int, int, int);
     bool intercessao(Vetor, Vetor, double &);
+    int sizeTriangulos();
+    int sizeVertices();
 };
 
 #endif // FACE_H
