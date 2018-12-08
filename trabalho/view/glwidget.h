@@ -11,7 +11,7 @@ public:
     explicit GLWidget(QWidget *parent = nullptr);
 
     void initializeGL();
-    void reziseGL(int w, int h);
+    void resizeGL(int w, int h);
     void paintGL();
 
 signals:

@@ -3,13 +3,13 @@
 
 
 GLWidget::GLWidget(QWidget *parent) : QGLWidget(parent)
-{
-    glOrtho(-300,300,-300,300,-1,1);
+{}
+
+void GLWidget::initializeGL(){
+    glOrtho(-150, 150, -150, 150, -1, 1);
 }
 
-void GLWidget::initializeGL(){}
-
-void GLWidget::reziseGL(int w, int h){
+void GLWidget::resizeGL(int w, int h){
     glClearColor(0.0,0.0,0.0,0.0);
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -17,6 +17,7 @@ void GLWidget::reziseGL(int w, int h){
     if (w == 0) w = 1;
 
     glViewport(0,0,w,h);
+    std::cout << w << "   " << h << std::endl;
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -25,30 +26,30 @@ void GLWidget::reziseGL(int w, int h){
 
 void GLWidget::paintGL(){
     double *corPintar;
+    int tamW = this->width(), tamH = this->height();
 
     glClearColor(0.0,0.0,0.0,0.0);
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
 
-    std::cout << this->width() << std::endl;
-    /*for(int i = 0; i < 300; i++){
-        for(int j = 0; j < 300; j++){
+    for(int i = 0; i < tamW; i++){
+        for(int j = 0; j < tamH; j++){
             //corPintar = ray->obterCor(i, j);
             glBegin(GL_POINTS);
                 glColor3f(1, 0, 0);
-                glVertex3f(i,j,0.0);
+                glVertex3f(i-150,j-150,0.0);
             glEnd();
         }
-    }*/
+    }
 
-    glBegin(GL_TRIANGLES);
+    /*glBegin(GL_TRIANGLES);
         glColor3f(1.0,0.0,0.0);
         glVertex3f( 0.0, 1.0,0.0);
         glColor3f(0.0,1.0,0.0);
         glVertex3f(-1.0,-1.0,0.0);
         glColor3f(0.0,0.0,1.0);
         glVertex3f(1.5,-1.0,0.0);
-    glEnd();
+    glEnd();*/
 }
 
 /*pintar::~pintar(){
