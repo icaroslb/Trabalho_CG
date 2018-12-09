@@ -1,6 +1,6 @@
 #include "triangulo.h"
 
-Triangulo::Triangulo(Vetor *p1, Vetor *p2, Vetor *p3) {
+Triangulo::Triangulo(Vetor *p1, Vetor *p2, Vetor *p3, Material *material):Forma(material) {
 	this->p1 = p1;
 	this->p2 = p2;
 	this->p3 = p3;
@@ -11,7 +11,7 @@ Vetor* Triangulo::getN(Vetor Pint){
 	v2 = *p2 - *p1;
 	v3 = *p3 - *p1;
 
-	return *v2 ->* *v3;
+	return (*v2 ->* *v3)->unitario();
 }
 
 PixInt Triangulo::intersecao(Vetor D, Vetor o){
@@ -56,6 +56,34 @@ PixInt Triangulo::intersecao(Vetor D, Vetor o){
 }
 
 bool Triangulo::visivel(Vetor v){
-	if (getN(v) * v < 0) return false;
+	if (*getN(v) * v < 0) return false;
 	return true;
+}
+
+Vetor* Triangulo::getCorAmbiente(Vetor Iamb){
+	return Iamb.arroba(*this->getMaterial()->getKamb());
+}
+
+Vetor* Triangulo::getCorLuz(Vetor Pint, Luz luz){
+	Vetor *n, *v, *l, *r, *resposta;
+	Vetor observador(0, 0, 0);
+	double prodLN, prodVR;
+
+	n = getN(Pint);
+	v = observador - Pint;
+	l = *luz.getCoordenada() - Pint;
+
+	v = v->unitario();
+	l = l->unitario();
+
+	prodLN = *l * *n;
+	r = *(*n * ((*l * *n) * 2)) - *l;
+	prodVR = pow((*v * *r), getMaterial()->getM());
+
+	if (prodLN < 0) {
+		prodLN = 0;
+		prodVR = 0;
+	}
+
+	return *(*(getMaterial()->getKdif()->arroba(*(luz.getIf()))) * prodLN) + *(*(getMaterial()->getKesp()->arroba(*(luz.getIf()))) * prodVR);
 }

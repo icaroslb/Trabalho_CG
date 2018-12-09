@@ -19,6 +19,10 @@ double Vetor::operator [] (int pos){
     return this->val[pos];
 }
 
+void Vetor::set(int pos, double value){
+    this->val[pos] = value;
+}
+
 double Vetor::operator * (Vetor produtoEsc){
     double produtoEscalar = 0;
 
@@ -66,6 +70,19 @@ Vetor* Vetor::operator + (Vetor sum){
     return adicao;
 }
 
+void Vetor::operator += (Vetor sum){
+    this->val[X] += sum.val[X];
+    this->val[Y] += sum.val[Y];
+    this->val[Z] += sum.val[Z];
+}
+
+Vetor* Vetor::arroba (Vetor sum){
+    Vetor *adicao = new Vetor(this->val[X] * sum.val[X],
+                                 this->val[Y] * sum.val[Y],
+                                 this->val[Z] * sum.val[Z]);
+
+    return adicao;
+}
 double Vetor::norma(){
     return sqrt(pow(this->val[X], 2) + pow(this->val[Y], 2) + pow(this->val[Z], 2));
 }

@@ -14,3 +14,4 @@ void Objeto::setVisiveis(Vetor v){
 		}
 	}
 }
+

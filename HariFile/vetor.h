@@ -19,12 +19,16 @@ public:
     ~Vetor();
 
     double operator [] (int pos);
+    void set(int pos, double value);
     double operator * (Vetor produtoEsc);
     Vetor* operator * (double escalar);
     Vetor* operator / (double escalar);
     Vetor* operator ->* (Vetor produtoVet);
     Vetor* operator - (Vetor sub);
     Vetor* operator + (Vetor sum);
+    void operator += (Vetor sum);
+
+    Vetor* arroba (Vetor sum);
     double norma();
     Vetor* unitario();
 };

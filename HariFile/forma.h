@@ -2,6 +2,8 @@
 #define FORMA_H 
 
 #include "vetor.h"
+#include "material.h"
+#include "luz.h"
 
 typedef struct PIXINT{
 	bool intercedeu;
@@ -12,7 +14,7 @@ typedef struct PIXINT{
 class Forma{
 public:
 	Forma();
-	//Forma(Material *material);
+	Forma(Material *material);
 	//Material getMaterial();
 	//void setMaterial(Material *material);
 	virtual PixInt intersecao(Vetor D, Vetor o);
@@ -20,11 +22,14 @@ public:
 	//virtual double getT();
 	virtual Vetor* getN(Vetor Pint);
 	virtual bool visivel(Vetor v);
+	virtual Vetor* getCorAmbiente(Vetor Iamb);
+	virtual Vetor* getCorLuz(Vetor Pint, Luz luz);
+	Material* getMaterial();
 	//virtual void mudaCoodCamera(Camera *camera);
 	//virtual void mudaCoodMundo(Camera *camera);
 
 private:
-	//Material *material;
+	Material *material;
 
 };
 
