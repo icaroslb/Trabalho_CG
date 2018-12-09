@@ -29,7 +29,6 @@ SOURCES += \
         view/mainwindow.cpp \
     controler/raycast.cpp \
     matematica/vetor.cpp \
-    matematica/vertice.cpp \
     view/glwidget.cpp \
     view/configuracoes.cpp
 
@@ -38,7 +37,6 @@ HEADERS += \
     controler/raycast.h \
     objetos/objetos.h \
     matematica/vetor.h \
-    matematica/vertice.h \
     view/glwidget.h \
     view/configuracoes.h
 

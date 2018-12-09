@@ -11,17 +11,17 @@
 class Vetor
 {
 private:
-    double val[4];
+    float val[4];
 
 public:
     Vetor();
-    Vetor(double x, double y, double z);
+    Vetor(float x, float y, float z);
     ~Vetor();
 
-    double operator [] (int pos);
-    double operator * (Vetor produtoEsc);
-    Vetor* operator * (double escalar);
-    Vetor* operator / (double escalar);
+    float operator [] (int pos);
+    float operator * (Vetor produtoEsc);
+    Vetor* operator * (float escalar);
+    Vetor* operator / (float escalar);
     Vetor* operator ->* (Vetor produtoVet);
     Vetor* operator - (Vetor sub);
     Vetor* unitario();

@@ -9,6 +9,7 @@ void GLWidget::initializeGL(){
     canvasHeith = 300;
     canvasWidth = 300;
     glOrtho(-(canvasWidth/2), (canvasWidth/2), -(canvasHeith/2), (canvasHeith/2), -1, 1);
+    ray = new rayCast(300, 300, this->width(), this->height(), 0);
 }
 
 void GLWidget::resizeGL(int w, int h){
@@ -19,6 +20,7 @@ void GLWidget::resizeGL(int w, int h){
     if (w == 0) w = 1;
 
     glViewport(0,0,w,h);
+    ray->mudarDimencoes(w, h);
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -26,7 +28,7 @@ void GLWidget::resizeGL(int w, int h){
 }
 
 void GLWidget::paintGL(){
-    double *corPintar;
+    pint *corPintar = new pint;
     int tamW = this->width(), tamH = this->height();
 
     glClearColor(0.0,0.0,0.0,0.0);

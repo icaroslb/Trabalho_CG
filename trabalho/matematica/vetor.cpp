@@ -5,7 +5,7 @@ Vetor::Vetor()
 
 }
 
-Vetor::Vetor(double x, double y, double z){
+Vetor::Vetor(float x, float y, float z){
     val[X] = x;
     val[Y] = y;
     val[Z] = z;
@@ -15,12 +15,12 @@ Vetor::Vetor(double x, double y, double z){
 Vetor::~Vetor(){
 }
 
-double Vetor::operator [] (int pos){
+float Vetor::operator [] (int pos){
     return this->val[pos];
 }
 
-double Vetor::operator * (Vetor produtoEsc){
-    double produtoEscalar = 0;
+float Vetor::operator * (Vetor produtoEsc){
+    float produtoEscalar = 0;
 
     for(int i = X; i < W; i++)
         produtoEscalar += this->val[i] * produtoEsc.val[i];
@@ -28,13 +28,13 @@ double Vetor::operator * (Vetor produtoEsc){
     return produtoEscalar;
 }
 
-Vetor* Vetor::operator * (double escalar){
+Vetor* Vetor::operator * (float escalar){
     Vetor *novoVetor = new Vetor(this->val[X] * escalar, this->val[Y] * escalar, this->val[Z] * escalar);
 
     return novoVetor;
 }
 
-Vetor* Vetor::operator / (double escalar){
+Vetor* Vetor::operator / (float escalar){
     Vetor *novoVetor = new Vetor(this->val[X] / escalar, this->val[Y] / escalar, this->val[Z] / escalar);
 
     return novoVetor;
@@ -59,7 +59,7 @@ Vetor* Vetor::operator - (Vetor sub){
 }
 
 Vetor* Vetor::unitario(){
-    double tamanho = sqrt(pow(this->val[X], 2) + pow(this->val[Y], 2) + pow(this->val[Z], 2));
+    float tamanho = sqrt(pow(this->val[X], 2) + pow(this->val[Y], 2) + pow(this->val[Z], 2));
 
     return (*this)/tamanho;
 }

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QGLWidget>
+#include "../controler/raycast.h"
 
 class GLWidget : public QGLWidget
 {
@@ -22,6 +23,7 @@ public slots:
 
 private:
     int canvasWidth, canvasHeith;
+    rayCast *ray;
 };
 
 #endif // GLWIDGET_H

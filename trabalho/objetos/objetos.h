@@ -4,19 +4,24 @@
 #include <iostream>
 #include <vector>
 #include "../matematica/vetor.h"
-#include "../matematica/vertice.h"
 
 typedef struct PIXINT{
     bool intercedeu;
-    double inter;
+    float inter;
+    int obj;
 } PixInt;
+
+typedef struct Pintar{
+    float *cores;
+    float x, y, z;
+} pint;
 
 class Objetos{
 public:
-    PixInt* intercessao(Vetor *raycast, Vertice *origem);
+    virtual PixInt* intercessao(Vetor *raycast, Vetor *origem, PixInt *resul);
 
 protected:
-    std::vector<Vertice*> vertices;
+    std::vector<Vetor*> vertices;
 };
 
 
