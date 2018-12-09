@@ -33,4 +33,11 @@ private:
 
 };
 
+
+typedef struct PIXINTFOR{
+	bool intercedeu;
+	double t;
+	Forma *forma;
+} PixIntFor;
+
 #endif //FORMA_H

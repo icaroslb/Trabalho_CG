@@ -3,6 +3,7 @@
 
 #include "forma.h"
 #include <vector>
+#include <limits>
 
 using namespace std;
 
@@ -13,6 +14,8 @@ public:
 
 	void addForma(Forma *forma);
 	void setVisiveis(Vetor v);
+
+	PixIntFor intersecao(Vetor D, Vetor o);
 
 
 private:
