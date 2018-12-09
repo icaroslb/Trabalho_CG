@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>380</width>
-    <height>380</height>
+    <width>862</width>
+    <height>612</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -84,21 +84,10 @@
      <rect>
       <x>70</x>
       <y>10</y>
-      <width>300</width>
-      <height>300</height>
+      <width>781</width>
+      <height>541</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>80</y>
-      <width>39</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -106,10 +95,17 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>380</width>
+     <width>862</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuConfigura_es">
+    <property name="title">
+     <string>Editar</string>
+    </property>
+    <addaction name="actionCanvas"/>
+   </widget>
+   <addaction name="menuConfigura_es"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -120,6 +116,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionCanvas">
+   <property name="text">
+    <string>Canvas</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

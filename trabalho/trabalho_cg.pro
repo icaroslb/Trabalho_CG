@@ -30,7 +30,8 @@ SOURCES += \
     controler/raycast.cpp \
     matematica/vetor.cpp \
     matematica/vertice.cpp \
-    view/glwidget.cpp
+    view/glwidget.cpp \
+    view/configuracoes.cpp
 
 HEADERS += \
         view/mainwindow.h \
@@ -38,10 +39,12 @@ HEADERS += \
     objetos/objetos.h \
     matematica/vetor.h \
     matematica/vertice.h \
-    view/glwidget.h
+    view/glwidget.h \
+    view/configuracoes.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    configuracoes.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

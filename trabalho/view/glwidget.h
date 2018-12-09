@@ -14,9 +14,14 @@ public:
     void resizeGL(int w, int h);
     void paintGL();
 
+    void mudarCanvas(int novaLargura, int novaAltura);
+
 signals:
 
 public slots:
+
+private:
+    int canvasWidth, canvasHeith;
 };
 
 #endif // GLWIDGET_H

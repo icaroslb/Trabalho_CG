@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QPixmap>
+#include "configuracoes.h"
 
 namespace Ui {
 class MainWindow;
@@ -14,7 +15,10 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    void repintar();
     ~MainWindow();
+
+private slots:
 
 private:
     Ui::MainWindow *ui;

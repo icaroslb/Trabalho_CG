@@ -39,8 +39,8 @@ double* rayCast::calcularBackGround(Vetor *raio){
 }
 
 double* rayCast::obterCor(int xLargura, int yAltura){
-    xLargura = -(larguraTam/2)+(larguraPix/2)+(larguraPix*abs(larguraTam/larguraPix));
-    yAltura = (alturaTam/2)-(alturaPix/2)-(alturaPix*abs(alturaTam/alturaPix));
+    //xLargura = -(larguraTam/2)+(larguraPix/2)+(larguraPix*abs(larguraTam/larguraPix));
+    //yAltura = (alturaTam/2)-(alturaPix/2)-(alturaPix*abs(alturaTam/alturaPix));
 
     Vetor raio(xLargura, yAltura, distTela);
     PixInt *inter = this->intersecao(xLargura, yAltura);

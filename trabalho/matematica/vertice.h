@@ -13,10 +13,10 @@ public:
     Vertice(double x, double y , double z);
 
     double operator [] (int pos);
-    Vetor* operator - (Vertice sub);
-    Vertice* operator + (Vetor som);
-    double operator * (Vetor prodturoEsc);
-    double operator * (Vertice prodturoEsc);
+    Vetor* operator - (Vertice *sub);
+    Vertice* operator + (Vetor *som);
+    double operator * (Vetor *prodturoEsc);
+    double operator * (Vertice *prodturoEsc);
     //void operator = (double *);
 };
 
