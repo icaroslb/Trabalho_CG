@@ -19,6 +19,7 @@ public:
 	//virtual bool intersecaoSombra(double D[3], double o[3]);
 	//virtual double getT();
 	virtual Vetor* getN(Vetor Pint);
+	virtual bool visivel(Vetor v);
 	//virtual void mudaCoodCamera(Camera *camera);
 	//virtual void mudaCoodMundo(Camera *camera);
 

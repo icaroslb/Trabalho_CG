@@ -16,6 +16,7 @@ public:
 	Vetor* getN(Vetor Pint);
 	
 	PixInt intersecao(Vetor D, Vetor o);
+	bool visivel(Vetor v);
 	
 	//void mudaCoodCamera(Camera *camera);
 	//void mudaCoodMundo(Camera *camera);

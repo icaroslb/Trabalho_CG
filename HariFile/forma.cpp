@@ -9,3 +9,7 @@ Vetor* Forma::getN(Vetor Pint){
 	Vetor *n;
 	return n;
 }
+
+bool Forma::visivel(Vetor v){
+	return true;
+}

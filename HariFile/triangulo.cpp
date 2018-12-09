@@ -54,3 +54,8 @@ PixInt Triangulo::intersecao(Vetor D, Vetor o){
 	resultado.intercedeu = abs(A - (A1 + A2 + A3)) < 0.000000005 ? true : false;
 	return resultado;
 }
+
+bool Triangulo::visivel(Vetor v){
+	if (getN(v) * v < 0) return false;
+	return true;
+}
