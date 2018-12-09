@@ -1,20 +1,19 @@
-#ifndef ESFERA_H
-#define ESFERA_H
+#ifndef TRIANGULO_H
+#define TRIANGULO_H
 
 #include <cmath>
 #include <cstdio>
 
 #include "forma.h"
 
-class Esfera : public Forma{
+class Triangulo : public Forma{
 public:
-	Esfera();
-	Esfera(double raio, Vetor *centro);
+	Triangulo();
+	Triangulo(Vetor *p1, Vetor *p2, Vetor *p3);
 
 	//void setW(double observador[3]);
 	//double getT();
 	Vetor* getN(Vetor Pint);
-	double getRaio();
 	
 	PixInt intersecao(Vetor D, Vetor o);
 	
@@ -23,10 +22,9 @@ public:
 
 
 private:
-	double raio;
-	Vetor *centro;
+	Vetor *p1, *p2, *p3;
 	//Material *material;
 
 };
 
-#endif //ESFERA_H
+#endif //TRIANGULO_H

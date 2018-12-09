@@ -2,7 +2,12 @@
 #define FORMA_H 
 
 #include "vetor.h"
-#include "objetos.h"
+
+typedef struct PIXINT{
+	bool intercedeu;
+	double t;
+} PixInt;
+
 
 class Forma{
 public:
