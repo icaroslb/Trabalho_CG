@@ -30,7 +30,8 @@ SOURCES += \
     controler/raycast.cpp \
     matematica/vetor.cpp \
     view/glwidget.cpp \
-    view/configuracoes.cpp
+    view/configuracoes.cpp \
+    matematica/matriz.cpp
 
 HEADERS += \
         view/mainwindow.h \
@@ -38,7 +39,8 @@ HEADERS += \
     objetos/objetos.h \
     matematica/vetor.h \
     view/glwidget.h \
-    view/configuracoes.h
+    view/configuracoes.h \
+    matematica/matriz.h
 
 FORMS += \
         mainwindow.ui \

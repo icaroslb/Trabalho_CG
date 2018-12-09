@@ -48,6 +48,8 @@ PixInt* rayCast::intersecao(int xLargura, int yAltura){
 float* rayCast::calcularCor(Vetor *local){
     float *corCalculada = new float[3];
 
+
+
     return corCalculada;
 }
 
