@@ -22,6 +22,7 @@ public:
     void translacao(double tx, double ty, double tz);
     void cisalhar(double angulo, int eixo1, int eixo2, int eixo3);
     void rotacionar(Vetor *rot, double angulo);
+    void indentidade();
 
 private:
     double **val;
