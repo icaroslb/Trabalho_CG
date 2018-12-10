@@ -9,16 +9,22 @@ class Matriz
 {
 public:
     Matriz();
+    Matriz(double**);
     ~Matriz();
 
     double* operator [] (int);
-    void operator = (float**);
+    void operator = (double**);
     void operator * (Vetor*);
     void operator * (Objetos*);
     void operator * (Matriz*);
 
+    void escala(double Sx, double Sy, double Sz, double x, double y, double z);
+    void translacao(double tx, double ty, double tz);
+    void cisalhar(double angulo, int eixo1, int eixo2, int eixo3);
+    void rotacionar(Vetor *rot, double angulo);
+
 private:
-    float **val;
+    double **val;
     Matriz *prox;
 };
 

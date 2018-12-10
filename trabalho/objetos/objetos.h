@@ -7,7 +7,7 @@
 
 typedef struct PIXINT{
     bool intercedeu;
-    float inter;
+    double inter;
     int obj;
 } PixInt;
 

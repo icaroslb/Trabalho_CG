@@ -31,7 +31,11 @@ SOURCES += \
     matematica/vetor.cpp \
     view/glwidget.cpp \
     view/configuracoes.cpp \
-    matematica/matriz.cpp
+    matematica/matriz.cpp \
+    objetos/forma.cpp \
+    objetos/material.cpp \
+    objetos/luz.cpp \
+    objetos/esfera.cpp
 
 HEADERS += \
         view/mainwindow.h \
@@ -40,7 +44,11 @@ HEADERS += \
     matematica/vetor.h \
     view/glwidget.h \
     view/configuracoes.h \
-    matematica/matriz.h
+    matematica/matriz.h \
+    objetos/forma.h \
+    objetos/material.h \
+    objetos/luz.h \
+    objetos/esfera.h
 
 FORMS += \
         mainwindow.ui \

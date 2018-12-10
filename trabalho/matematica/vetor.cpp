@@ -5,7 +5,7 @@ Vetor::Vetor()
 
 }
 
-Vetor::Vetor(float x, float y, float z){
+Vetor::Vetor(double x, double y, double z){
     val[X] = x;
     val[Y] = y;
     val[Z] = z;
@@ -15,12 +15,12 @@ Vetor::Vetor(float x, float y, float z){
 Vetor::~Vetor(){
 }
 
-float Vetor::operator [] (int pos){
-    return this->val[pos];
+double* Vetor::operator [] (int pos){
+    return &(this->val[pos]);
 }
 
-float Vetor::operator * (Vetor produtoEsc){
-    float produtoEscalar = 0;
+double Vetor::operator * (Vetor produtoEsc){
+    double produtoEscalar = 0;
 
     for(int i = X; i < W; i++)
         produtoEscalar += this->val[i] * produtoEsc.val[i];
@@ -28,13 +28,13 @@ float Vetor::operator * (Vetor produtoEsc){
     return produtoEscalar;
 }
 
-Vetor* Vetor::operator * (float escalar){
+Vetor* Vetor::operator * (double escalar){
     Vetor *novoVetor = new Vetor(this->val[X] * escalar, this->val[Y] * escalar, this->val[Z] * escalar);
 
     return novoVetor;
 }
 
-Vetor* Vetor::operator / (float escalar){
+Vetor* Vetor::operator / (double escalar){
     Vetor *novoVetor = new Vetor(this->val[X] / escalar, this->val[Y] / escalar, this->val[Z] / escalar);
 
     return novoVetor;
@@ -58,8 +58,18 @@ Vetor* Vetor::operator - (Vetor sub){
     return subtracao;
 }
 
-Vetor* Vetor::unitario(){
-    float tamanho = sqrt(pow(this->val[X], 2) + pow(this->val[Y], 2) + pow(this->val[Z], 2));
+double Vetor::norma(){
+    return sqrt(pow(this->val[X], 2) + pow(this->val[Y], 2) + pow(this->val[Z], 2));
+}
 
-    return (*this)/tamanho;
+Vetor* Vetor::arroba (Vetor sum){
+    Vetor *adicao = new Vetor(this->val[X] * sum.val[X],
+                                 this->val[Y] * sum.val[Y],
+                                 this->val[Z] * sum.val[Z]);
+
+    return adicao;
+}
+
+Vetor* Vetor::unitario(){
+    return (*this)/norma();
 }
